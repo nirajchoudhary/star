@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> stars</title>
+  <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<style>
+    span.stars, span.stars span {
+    	display: block;
+    	background: url(/img/stars.png) 0 -16px repeat-x;
+    	width: 80px;
+    	height: 16px;
+    }
+    span.stars span {
+  	background-position: 0 0;
+    }
+</style>
+<script> 
+    $.fn.stars = function() {
+    	return $(this).each(function() {
+        	// Get the value
+        	var val = parseFloat($(this).html());
+        	// Make sure that the value is in 0 - 5 range, multiply to get width
+        	var size = Math.max(0, (Math.min(5, val))) * 16;
+        	// Create stars holder
+        	var $span = $('<span />').width(size);
+        	// Replace the numerical value with stars
+        	$(this).html($span);
+   	});
+    }
+    $(function() {
+    	$('span.stars').stars();
+    });
+    $(document).ready(function(){
+    	$("#input").blur(function(){
+		$("span.stars").text($("#input").val());
+		$('span.stars').stars();
+		$("#input").focus()
+    	});
+    });
+</script>
+</head>
+
+<body>
+<input type="text" value="0" id="input" name="input">
+<br><br>
+<span class="stars">0</span>
+
+</body>
+</html>

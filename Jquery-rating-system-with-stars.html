@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title> stars</title>
+        <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+</head>
+<body style="background-color:#fafafa;">
+        <link href="css/rating_star.css" rel="stylesheet" type="text/css">
+    
+        <script type="text/javascript" src="js/rating_star.js"></script>
+
+
+
+	Demo1(input type is text)<br><br>
+  	<input name="my_input" value="3" id="rating_simple1" type="text"><br><br>
+
+ 
+    <script language="javascript" type="text/javascript">          
+            $(function() {
+                $("#rating_simple1").webwidget_rating_sex({
+                    rating_star_length: '5',
+                    rating_initial_value: '',
+                    rating_function_name: '',//this is function name for click
+                    directory: 'img/'
+                });
+            });
+        </script>
+</body>
+</html>
